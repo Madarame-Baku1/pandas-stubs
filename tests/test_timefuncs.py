@@ -58,6 +58,7 @@ from pandas.tseries.offsets import (
 
 
 def test_types_init() -> None:
+    check(assert_type(pd.Timestamp(pd.NaT), pd.Timestamp), NaTType)
     check(assert_type(pd.Timestamp("2021-03-01T12"), pd.Timestamp), pd.Timestamp)
     check(assert_type(pd.Timestamp(dt.date(2021, 3, 15)), pd.Timestamp), pd.Timestamp)
     check(
